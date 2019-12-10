@@ -46,7 +46,6 @@ void draw() {
 		textSize(15);
 		if (start) {
 			background(255);
-			text("Use '"+teclas[0].toString()+"', '"+teclas[1].toString()+"', '"+teclas[2].toString()+"', '"+teclas[3].toString()+"', '"+teclas[4].toString()+"', '"+teclas[5].toString()+"', '"+teclas[6].toString()+"' and '"+teclas[7].toString()+"'",15,height/2);
 			text("Press 'R' to Start",80,height/2+40);
 		}
 		else {
@@ -103,19 +102,18 @@ void desenhaLinhas() {
 }
 
 void desenhaBorda() {
-	color c = (comprimentoBarra >= comprimentoInicial) ? color(0,int(((comprimentoBarra-comprimentoInicial)/(barraMaxima-comprimentoInicial))*255),0) : color(255-int((comprimentoBarra/(barraMaxima-50))*255),0,0);
+	color c = (comprimentoBarra >= comprimentoInicial) ? color(0) : color(255-int((comprimentoBarra/(barraMaxima-50))*255),0,0);
 
   	fill(c);
   	stroke(c);
 
-    rect(2,0,2,height);
-    rect(width-4,0,2,height);
+    rect(0,height-4,width,4);
 
-	fill(0);
+    fill(0);
   	stroke(0);
 
-    rect(0,0,2,height);
-    rect(width-6,0,2,height);
+    rect(0,0,4,height);
+    rect(width-6,0,4,height);
 }
 
 void desenhaLetras() {
